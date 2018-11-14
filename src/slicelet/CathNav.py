@@ -173,12 +173,12 @@ class CathNavGuidelet(Guidelet):
     self.calibrationCollapsibleButton.setProperty('collapsed', False)
 
   def __del__(self):#common
-    self.cleanup()
+    self.preCleanup()
 
   # Clean up when slicelet is closed
-  def cleanup(self):#common
-    Guidelet.cleanup(self)
-    logging.debug('cleanup')
+  def preCleanup(self):#common
+    Guidelet.preCleanup(self)
+    logging.debug('preCleanup')
     self.setAndObserveTumorMarkupsNode(None)
     
   def setupScene(self): #applet specific
